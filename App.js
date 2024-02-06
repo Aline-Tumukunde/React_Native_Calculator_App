@@ -22,7 +22,7 @@ export default function App() {
         setResult('');
         break;
 
-      // Handle basic arithmetic operations
+    
       case '+':
       case '-':
       case '*':
