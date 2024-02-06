@@ -27,7 +27,7 @@ export default function App() {
       case '-':
       case '*':
       case '/':
-        // Check if the last character is an operator and replace it with the new one
+       
         const lastChar = input.slice(-1);
         if (['+', '-', '*', '/'].includes(lastChar)) { 
           setInput((prevInput) => prevInput.slice(0, -1) + value);
