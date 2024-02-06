@@ -3,24 +3,23 @@ import { useState } from 'react';
 import { SafeAreaView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 export default function App() {
-  //hook is used to manage state within functional components
-  //in this app,it's used to maintain the state of the input value and the result value.
+
   const [input, setInput] = useState('')
   const [result, setResult] = useState('')
   // Function to handle button presses
-  const onButtonPress = (value) => { // This function is responsible for handling button presses in the calculator.
-    switch (value) { // checks the value parameter passed to the function.
+  const onButtonPress = (value) => { 
+    switch (value) { 
       case '=':
         try {
-          setResult(eval(input).toString()); // if expression succed is stored (eval is function)
+          setResult(eval(input).toString()); 
         } catch (error) {
           setResult('error');
         }
         break;
 
-      case 'C':   //This case handles the 'C' button press, which is used to clear the input and result.
-        setInput(''); // This clears the input.
-        setResult('');//This clears the results.
+      case 'C':  
+        setInput('');
+        setResult('');
         break;
 
       // Handle basic arithmetic operations
@@ -30,7 +29,7 @@ export default function App() {
       case '/':
         // Check if the last character is an operator and replace it with the new one
         const lastChar = input.slice(-1);
-        if (['+', '-', '*', '/'].includes(lastChar)) { // This line extracts the last character from the input string.
+        if (['+', '-', '*', '/'].includes(lastChar)) { 
           setInput((prevInput) => prevInput.slice(0, -1) + value);
         } else {
           setInput((prevInput) => prevInput + value);
