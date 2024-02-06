@@ -6,7 +6,7 @@ export default function App() {
 
   const [input, setInput] = useState('')
   const [result, setResult] = useState('')
-  // Function to handle button presses
+ 
   const onButtonPress = (value) => { 
     switch (value) { 
       case '=':
